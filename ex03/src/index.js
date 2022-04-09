@@ -1,10 +1,11 @@
 function rangeOfNumbers(startN, endN){
-    if(endN <= startN){
-        return [startN];
-    } else{
-        var array = rangeOfNumbers(startN, endN-1);
-        array.push(endN);
-        return array;
+    if(startN>endN) return "The starting number will always be less than or equal to ending number";
+    if(startN == endN){
+        return [endN];
+    } else {
+        partOfRange = rangeOfNumbers(startN, endN-1);
+        partOfRange.push(endN);
+        return partOfRange; 
     }
 }
 
